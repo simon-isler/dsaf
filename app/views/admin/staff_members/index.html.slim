@@ -1,0 +1,28 @@
+= content_for :page_title, 'dSAF Admin | Staff members'
+h1.pb-3.text-red Staff members
+- flash.each do |type, message|
+  div class="alert alert-secondary alert-dismissible fade show" role='alert'
+    = message
+    button.close data-dismiss='alert' aria-label='Schliessen'
+      span aria-hidden='true' &times;
+table.table
+  thead
+    tr
+      th scope="col" #
+      th.w-25 scope="col" Name
+      th scope="col" Member since
+      th scope="col"
+  tbody
+    - @staff_members.each do |staff_member|
+      tr
+        th scope="row" = staff_member.id
+        td = staff_member.full_name
+        td = staff_member.member_since
+        td.text-right
+          = link_to edit_admin_staff_member_path(staff_member), class: 'text-white'
+            i.fas.fa-edit.fa-2x
+          = link_to admin_staff_member_path(staff_member), method: :delete, data: { confirm: 'Are you sure?' },
+                  class: 'text-white ml-2'
+            i.fas.fa-trash-alt.fa-2x
+.text-center.mt-4
+  = link_to 'Add staff member', new_admin_staff_member_path, class: 'btn btn-secondary'

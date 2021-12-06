@@ -1,0 +1,25 @@
+nav.navbar.navbar-expand-lg.navbar-dark
+  a.navbar-brand.ml-1 href="/"
+    h1 dSAF
+  button.navbar-toggler aria-controls="navbarToggler" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarToggler" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarToggler.ml-auto.collapse.navbar-collapse
+    ul.navbar-nav.ml-auto
+      = nav_link 'Home', root_path
+      li.nav-item.dropdown.text-md-center
+        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+          | About us
+        .dropdown-menu aria-labelledby="navbarDropdown"
+          a.dropdown-item href="/pages/about" Who we are
+          a.dropdown-item href="/pages/history" History
+          a.dropdown-item href="/pages/staff_members" Staff
+      = nav_link 'News', '/pages/news'
+      li.nav-item.dropdown.text-md-center
+        a#mediaDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+          | Media
+        .dropdown-menu aria-labelledby="mediaDropdown"
+          a.dropdown-item href="/pages/pictures" Pictures
+          a.dropdown-item href="/pages/movies" Movies
+      = nav_link 'Forum', 'https://dsaf.forumieren.de/forum'
+      li.nav-item.text-md-center
+        = link_to 'Join us!', new_contact_path, class: 'btn btn-secondary'

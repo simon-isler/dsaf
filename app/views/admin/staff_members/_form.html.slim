@@ -1,0 +1,17 @@
+= simple_form_for @staff_member do |form|
+  .row
+    .col
+      = form.input :first_name
+    .col
+      = form.input :last_name
+    .col
+      = form.input :nickname
+  .row
+    .col
+      = form.input :birthday
+    .col
+      = form.input :member_since
+  = form.input :favourite_aircraft
+  = form.input :responsibilities
+  = link_to 'Back', admin_staff_members_path, class: 'btn text-red'
+  = form.button :submit, class: 'btn btn-secondary float-right'

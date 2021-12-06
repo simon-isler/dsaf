@@ -1,0 +1,27 @@
+= content_for :page_title, 'dSAF Admin | News'
+h1.pb-3.text-red News
+- flash.each do |type, message|
+  div class="alert alert-secondary alert-dismissible fade show" role='alert'
+    = message
+    button.close data-dismiss='alert' aria-label='Schliessen'
+      span aria-hidden='true' &times;
+table.table
+  thead
+    tr
+      th scope="col" #
+      th.w-25 scope="col" Title
+      th scope="col" Date
+      th scope="col"
+  tbody
+    - @news.each do |post|
+      tr
+        th scope="row" = post.id
+        td = post.title
+        td = post.created_at
+        td.text-right
+          = link_to edit_admin_news_path(post), class: 'text-white'
+            i.fas.fa-edit.fa-2x
+          = link_to admin_news_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-white ml-2'
+            i.fas.fa-trash-alt.fa-2x
+.text-center.mt-4
+  = link_to 'Add news', new_admin_news_path, class: 'btn btn-secondary'

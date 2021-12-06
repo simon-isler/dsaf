@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+renuo_echo()
+{
+  echo "\033[1;7;38;2;38;215;157m $1 \033[0m"
+}
+
+renuo_echo "Fast checks…"
+bin/fastcheck
+
+renuo_echo "Packing JS…"
+bin/webpack

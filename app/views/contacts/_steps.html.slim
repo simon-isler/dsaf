@@ -1,0 +1,38 @@
+.card.bg-dark
+  .card-body
+    ul#steps.nav.nav-pills.text-center.mt-2.mb-3 role='tablist'
+      li.step
+        a#step1-tab.tab.active.lead.text-red aria-controls="step1" aria-selected="true" data-toggle="pill" href="#step1" role="tab"
+          | Step 1
+      .divider
+      li.step
+        a#step2-tab.tab.lead.text-red aria-controls="step2" aria-selected="false" data-toggle="pill" href="#step2" role="tab"
+          | Step 2
+      .divider
+      li.step
+        a#step3-tab.tab.lead.text-red aria-controls="step3" aria-selected="false" data-toggle="pill" href="#step3" role="tab"
+          | Step 3
+    = simple_form_for @contact, html: { novalidate: true, data: { recaptcha: true } } do |form|
+      .tab-content.d-flex.justify-content-center
+        #step1.tab-pane.fade.show.active.w-100 aria-labelledby="step1-tab" role="tabpanel"
+          = render 'form', form: form
+          button.btn.btn-light.next-tab.float-right type="button" Next
+        #step2.tab-pane.fade.w-75 aria-labelledby="step2-tab" role="tabpanel"
+          p.lead
+            | As soon as you have contacted us, we will carry out a test flight with you. The main thing is to get to know
+              you better. At this time your flying skills are not as important as your personal setting and character. We will
+              find out if you fit into our group. The missing skills we will then train you in the field where it is
+              necessary.
+          button.btn.btn-secondary.previous-tab.float-left Previous
+          button.btn.btn-light.next-tab.float-right Next
+        #step3.tab-pane.fade.w-75 aria-labelledby="step3-tab" role="tabpanel"
+          p.lead
+            | The person who performed the test flight with you will roughly classify you according to your skills.
+              If your flying skills are already sufficient, you will be assigned to one of our three Hornet squadrons.
+              Otherwise you will remain a student for the time being and will be prepared for your tasks by our instructors.
+              In all cases you will be on trial with us in the first month so that you have the opportunity to get to know us
+              better and we can get to know you better.
+          p.lead.font-weight-bold No more questions?
+          p.lead Then let's go, we're waiting for your message.
+          button.btn.btn-secondary.previous-tab.float-left Previous
+          = form.submit 'Send message', class: 'btn btn-light float-right'

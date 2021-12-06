@@ -1,0 +1,7 @@
+p Hello
+p ️Somebody wanted to contact you. He or she submitted the following information:
+ul.mt-2
+  li Name: #{@contact.name}
+  li E-mail: #{@contact.email}
+p.mt-2 Message:
+p = @contact.message

@@ -1,0 +1,10 @@
+= content_for :page_title, 'dSAF | News'
+.container.container-padding
+  h1.pb-3.text-red News
+  - @news.each do |post|
+    .card.mb-3
+      .card-body.bg-dark
+        .float-right = post.created_at.to_date
+        h4.card-title = post.title
+        p.card-text = post.description
+  = will_paginate @news, list_classes: %w(pagination pagination-sm justify-content-center)

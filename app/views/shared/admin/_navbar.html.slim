@@ -1,0 +1,11 @@
+nav.navbar.navbar-expand-lg.navbar-dark
+  a.navbar-brand.ml-1 href="/admin"
+    h1 dSAF Admin
+  button.navbar-toggler aria-controls="navbarToggler" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarToggler" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  - if signed_in?
+    #navbarToggler.ml-auto.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        = nav_link 'News', admin_news_index_path
+        = nav_link 'Staff', admin_staff_members_path
+        = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary'

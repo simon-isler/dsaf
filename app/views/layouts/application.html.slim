@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title = yield(:page_title)
+    meta content='text/html; charset=UTF-8' http-equiv="Content-Type"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="keywords" content="Digital,Swiss,Airforce,dSAF,Virtual,Airfoce,Switzerland"
+    meta name="author" content="Simon Isler"
+    meta name="description" content="Homepage of the Digital Swiss Air Force!"
+    meta name="robots" content="index,follow"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'stylesheets', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = render 'shared/favicon'
+    = yield(:head)
+  body class="#{controller_name} #{action_name}"
+    = render 'shared/navbar'
+    .container-fluid
+      main
+        = yield
+      = render 'shared/footer' unless current_page? root_path

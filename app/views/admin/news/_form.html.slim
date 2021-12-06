@@ -1,0 +1,5 @@
+= simple_form_for @news do |form|
+  = form.input :title
+  = form.input :description
+  = link_to 'Back', admin_news_index_path, class: 'btn text-red'
+  = form.button :submit, class: 'btn btn-secondary float-right'

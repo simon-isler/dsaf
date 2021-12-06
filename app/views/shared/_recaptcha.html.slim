@@ -1,0 +1,6 @@
+- content_for :head
+  - if ENV['RECAPTCHA_SITE_KEY']
+    meta name="turbolinks-visit-control" content="reload"
+    script src="https://www.google.com/recaptcha/api.js?render=#{ENV['RECAPTCHA_SITE_KEY']}"
+    javascript:
+        var RecaptchaKey = '#{ENV['RECAPTCHA_SITE_KEY']}';

@@ -1,0 +1,38 @@
+= content_for :page_title, 'dSAF'
+.d-none.d-lg-block
+  #carouselExampleIndicators.carousel.slide data-ride="carousel"
+    ol.carousel-indicators
+      li.active data-slide-to="0" data-target="#carouselExampleIndicators"
+      li data-slide-to="1" data-target="#carouselExampleIndicators"
+      li data-slide-to="2" data-target="#carouselExampleIndicators"
+    .carousel-inner role="listbox"
+      .carousel-item.active.fullscreen-carousel-item
+        = image_pack_tag 'wallpaper_1.png', class: 'img-fluid min-vw-100'
+        .carousel-caption.d-block
+          h2.display-4.text-red.font-weight-bold Welcome to Digital Swiss Air Force!
+          p.lead
+            | We are a Digital Combat Simulator community from Switzerland.
+              Our goal is to fly like the real Swiss Air Force.
+      .carousel-item.fullscreen-carousel-item
+        = image_pack_tag 'wallpaper_2.png', class: 'img-fluid min-vw-100'
+      .carousel-item.fullscreen-carousel-item
+        = image_pack_tag 'wallpaper_3.png', class: 'img-fluid min-vw-100'
+        .carousel-caption.d-block
+          h2.display-4.text-red.font-weight-bold "As real as it gets"
+          p.lead
+            | ...is written big in our community. Most of us are aspiring Military Pilots for the Swiss Air Force.
+              We share our passion in the community.
+    a.carousel-control-prev data-slide="prev" href="#carouselExampleIndicators" role="button"
+      span.carousel-control-prev-icon aria-hidden="true"
+      span.sr-only Previous
+    a.carousel-control-next data-slide="next" href="#carouselExampleIndicators" role="button"
+      span.carousel-control-next-icon aria-hidden="true"
+      span.sr-only Next
+.d-lg-none.text-center
+  h3.display-4.text-red.mt-3 Welcome!
+  = image_pack_tag 'logo.png', class: 'img-fluid rounded-circle mt-4 mb-4', size: 300
+  p.lead
+    | We are a group of aviation enthusiasts who simulate certain structures of the Swiss Air Force.
+      For this we use the software DCS (Digital Combat Simulator) and especially
+      the modules F/A-18C and F-5E, just like in real life.
+

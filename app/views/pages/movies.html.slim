@@ -1,0 +1,32 @@
+= content_for :page_title, 'dSAF | Movies'
+.container.container-padding
+  h1.pb-3.text-red Movies
+  .d-none.d-md-block
+    #carouselIndicators.carousel.slide data-ride="carousel"
+      ol.carousel-indicators
+        li.active data-slide-to="0" data-target="#carouselIndicators"
+        li data-slide-to="1" data-target="#carouselIndicators"
+        li data-slide-to="2" data-target="#carouselIndicators"
+      .carousel-inner
+        .carousel-item.active
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="https://www.youtube.com/embed/hzidqvZYirY"
+        .carousel-item
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="https://www.youtube.com/embed/g63bT-WwQ0g"
+        .carousel-item
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="https://www.youtube.com/embed/74rAAELzU9I"
+      a.carousel-control-prev data-slide="prev" href="#carouselIndicators" role="button"
+        span.carousel-control-prev-icon aria-hidden="true"
+        span.sr-only Previous
+      a.carousel-control-next data-slide="next" href="#carouselIndicators" role="button"
+        span.carousel-control-next-icon aria-hidden="true"
+        span.sr-only Next
+  .d-md-none
+    .embed-responsive.embed-responsive-16by9.mb-4
+      iframe.embed-responsive-item src="https://www.youtube.com/embed/hzidqvZYirY"
+    .embed-responsive.embed-responsive-16by9.mb-4
+      iframe.embed-responsive-item src="https://www.youtube.com/embed/g63bT-WwQ0g"
+    .embed-responsive.embed-responsive-16by9
+      iframe.embed-responsive-item src="https://www.youtube.com/embed/74rAAELzU9I"
